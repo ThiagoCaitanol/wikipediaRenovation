@@ -11,13 +11,16 @@
 
     <header>     
         <figure class="logo">
-            <img src="assets/images/wikipedia.png"/>
+            <img src="assets/images/wikipedia.png" alt="WikiMedia Logo"/>
             <figcaption>WikiMedia</figcaption>
         </figure>
         <div class="search-container">
+            <label for="busca">
+            <input type="text" id="busca" placeholder="Pesquisar no artigo" alt="Realizar uma marcação visual no texto de acordo com a pesquisa">
             
-            <input type="text" id="busca" placeholder="Pesquisar no artigo"><br>
             <button id="btn-busca">Buscar</button>
+            
+        </label>
         </div>
     </header>
 
@@ -41,8 +44,7 @@
                 hospitalares e dar uma boa vida aos seus filhos. Walter resolve produzir metanfetamina de alta
                  pureza com seu ex-aluno, Jesse Pinkman.</p>
             <figure>    
-                <img src="assets/images/breaking-bad-a-morte-chocante-750x430.jpg" width="300"/>
-                <figcaption>Walter White</figcaption>
+                <img src="assets/images/01010750x430.jpg" width="300" alt="Foto que representa o personagem Walter White"/>
             </figure>
 
             <p> Breaking Bad se passa em Albuquerque, Novo México, e gira em torno das escolhas de seu protagonista, 
@@ -64,7 +66,7 @@
                  E isto aplica-se tanto a um dado momento quanto a uma vida inteira."</p>
 
             <p>A rede AMC, que exibiu a série em 20 de Janeiro de 2008, pediu originalmente nove episódios para a 
-                primeira temporada (incluindo o episódio piloto), mas a Greve dos Escritores Americanos de 2007–2008 
+                primeira temporada (incluindo o episódio piloto), mas a Greve dos Escritores Americanos de 2007 a 2008 
                 limitou a produção aos sete episódios existentes.</p>
 
             <p><blockquote>“Eu quero fazer o sincronismo de cor para cada um desses episódios em que você se senta com o colorista e certifica-se de que a cor de cada cena individual é exatamente da maneira que você queria.”
@@ -188,24 +190,9 @@
                 <h3 id="referencias">Referências</h3><hr>
                 <ol><li><q cite="https://pt.wikipedia.org/wiki/Breaking_Bad"><a href="https://pt.wikipedia.org/wiki/Breaking_Bad">Wikipedia</a>. Consultado em 28/03/2022.</q></li></ol>
 
-                <script>
-                    var searchField = document.getElementById('busca');
-                    var btnSearch = document.getElementById('btn-busca');
-                    var mainObject = document.querySelector('main');
-                    var textToSearch = mainObject.innerHTML;
 
-                    btnSearch.addEventListener('click', function() {
-                    const searchString = searchField.value.trim();
-                    if (searchString.length <= 3) {
-                        alert('A busca deve conter pelo menos 3 caracteres.');
-                        return;
-                    }
-                    const regex = new RegExp(`(${searchString})(?!(.(?!<mark))*</mark>)+`, 'ig');
-                    mainObject.innerHTML = textToSearch.replace(regex, `<mark>${searchString}</mark>`);
-                    });
-                </script>
         </div>
-
+        <div>
         <nav class="anchors">
             <h2>Neste Artigo</h2>
             <ul>
@@ -221,6 +208,26 @@
                 <li><a href="#referencias">Referências</a></li>
             </ul>
         </nav>
+        </div>
+        <script>
+            var searchField = document.getElementById('busca');
+            var btnSearch = document.getElementById('btn-busca');
+            var mainObject = document.querySelector('main');
+            var textToSearch = mainObject.innerHTML;
+
+            
+            btnSearch.addEventListener('click', function() {
+            let searchString = searchField.value.trim();
+            if (searchString.length <= 3) {
+                alert('A busca deve conter pelo menos 3 caracteres.');
+                return;
+            }
+            const regex = new RegExp(`(${searchString})(?!(.(?!<mark))*</mark>)+`, 'ig');
+
+            mainObject.innerHTML = textToSearch.replace(regex, `<mark>${searchString}</mark>`);
+            
+            });
+        </script>
     </main>
 
     <footer>
