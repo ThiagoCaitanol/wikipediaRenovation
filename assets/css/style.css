@@ -45,3 +45,35 @@ footer {
 figure {
     text-align: center;
 }
+
+.search-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 10px;
+  }
+  .pes{
+ font-size: 18px;
+  margin-bottom: 10px;
+  }
+  #busca {
+    padding: 10px;
+    width: 15%;
+    font-size: 16px;
+    border: lightgray;
+  }
+  
+  #btn-busca {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  
+  #btn-busca:hover {
+    background-color: #45a049;
+  }
